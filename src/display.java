@@ -127,12 +127,12 @@ public class display
 	{
 		int i=0,j=0;
 		
+		System.out.print(" ");
 		for(i=0;i<getSize();i++)
 		{
-			System.out.print(" ");
 			segmentA();
-			System.out.print(" ");
 		}
+		System.out.print(" ");
 		
 		for(i=0;i<getSize();i++)
 		{
@@ -144,16 +144,15 @@ public class display
 				System.out.print(" ");
 			}
 			segmentB();
-			System.out.print("\n");
+			
 		}
-		
-		
+		System.out.print("\n");
+		System.out.print(" ");
 		for(i=0;i<getSize();i++)
 		{
-			System.out.print(" ");
 			segmentG();
-			System.out.print(" ");
 		}
+		System.out.print(" ");
 		
 		for(i=0;i<getSize();i++)
 		{
@@ -165,25 +164,17 @@ public class display
 				System.out.print(" ");
 			}
 			segmentC();
-			System.out.print("\n");
-		}
-		
-		for(i=0;i<getSize();i++)
-		{
-			System.out.print(" ");
-			segmentD();
-			System.out.print(" ");
+			
 		}
 		System.out.print("\n");
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.print(" ");
+		for(i=0;i<getSize();i++)
+		{
+			
+			segmentD();
+		}
+		System.out.print(" ");
+		System.out.print("\n");	
 	}
 	
 	public void segmentA()
