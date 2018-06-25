@@ -1,19 +1,23 @@
 
 import java.util.*;
 
-public class Display_Line 
+public class Display_Line  				//clase para agrupar displays de siete segmentos
 {
-	private ArrayList <display> row;
+	private ArrayList <display> row; 	//la clase que contendra los displays a mostrar
 	
-	public Display_Line()
+	public Display_Line() 				//constructor
 	{
 		row=new ArrayList<display>();
 	}
-	public void add(display s) 
+	public void add(display s) 			//añadir un display a la fila
 	{
 		row.add(s);
 	}
-	public void printline()
+	public void delete()				//limpiar la lista
+	{
+		row.clear();
+	}
+	public void printline()				//imprimir todos los displays de la lista segun el tamaño y el dato a imprimir
 	{
 	
 		int i=0,j=0,k=0;
@@ -28,10 +32,10 @@ public class Display_Line
 			System.out.print("  ");
 		}
 		
-		System.out.print("\n");
-		for(k=0;k<row.size();k++)
+		for(i=0;i<row.get(0).getSize();i++)
 		{
-			for(i=0;i<row.get(k).getSize();i++)
+			System.out.print("\n");
+			for(k=0;k<row.size();k++)
 			{
 				row.get(k).segmentF();
 				for(j=0;j<row.get(k).getSize();j++)
@@ -41,9 +45,9 @@ public class Display_Line
 				row.get(k).segmentB();
 				System.out.print(" ");
 			}
-			System.out.print("\n");
 		}
 		
+		System.out.print("\n");
 		
 		for(k=0;k<row.size();k++)
 		{
@@ -55,10 +59,10 @@ public class Display_Line
 			System.out.print("  ");
 		}
 		
-		System.out.print("\n");
-		for(k=0;k<row.size();k++)
+		for(i=0;i<row.get(0).getSize();i++)
 		{
-			for(i=0;i<row.get(k).getSize();i++)
+			System.out.print("\n");
+			for(k=0;k<row.size();k++)
 			{
 				row.get(k).segmentE();
 				for(j=0;j<row.get(k).getSize();j++)
@@ -68,7 +72,6 @@ public class Display_Line
 				row.get(k).segmentC();
 				System.out.print(" ");
 			}
-			System.out.print("\n");
 		}
 		
 		System.out.print("\n");
@@ -77,7 +80,7 @@ public class Display_Line
 			System.out.print(" ");
 			for(i=0;i<row.get(k).getSize();i++)
 			{
-				row.get(k).segmentG();
+				row.get(k).segmentD();
 			}
 			System.out.print("  ");
 		}

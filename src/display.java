@@ -2,21 +2,31 @@ import java.lang.System;
 
 public class display
 {
-	private int size;
-	private int literal;
-	private Boolean code[];
+	private int size;			 //tamaño de el display
+	private int literal;		// el simbolo a mostrar, entre el 0 y el 9
+	private Boolean code[];		//variable para asignar que segmentos de recta se imprimiran o no
 	public display(int s,int l)
 	{
 		size=s;
 		literal=l;
 		encoder();
 	}
-	public void encoder()
+	
+	public int getLiteral() 
+	{
+		return literal;
+	}
+	public int getSize()
+	{
+		return size;
+	}
+	
+	public void encoder() //funcion para cambiar el numero a formato de display de siete segmentos
 	{
 		int s=getLiteral();
 		Boolean codes[]=new Boolean[7];
 
-		switch(s)
+		switch(s) //decodificador de entero a bcd
 		{
 			//recordar configuracion de display de siete segmentos(ver en google!): abcdefg
 			//true: segmento encendido, false: segmento apagado
@@ -123,13 +133,13 @@ public class display
 		}
 		code=codes;
 	}
-	public void print()
+	public void print() //para imprimir solo un display. Solo usado en pruebas
 	{
 		int i=0,j=0;
 		
 		System.out.print(" ");
-		for(i=0;i<getSize();i++)
-		{
+		for(i=0;i<getSize();i++) 	//se imprime cada segmento tantas veces como el tamaño ingresado
+		{							//dejando los espacios necesarios para que forme la figura adecuada
 			segmentA();
 		}
 		System.out.print(" ");
@@ -177,11 +187,20 @@ public class display
 		System.out.print("\n");	
 	}
 	
-	public void segmentA()
-	{
+	
+	
+	
+	
+	
+	public void segmentA() //impresion de los simbolos para cada tipo de segmento
+	{						//si el segmento esta desactivado se imprime en pantalla un espacio
 		if(code[0])
 		{
 			System.out.print("-");
+		}
+		else
+		{
+			System.out.print(" ");
 		}
 	}
 	public void segmentB()
@@ -190,6 +209,10 @@ public class display
 		{
 			System.out.print("|");
 		}
+		else
+		{
+			System.out.print(" ");
+		}
 	}
 	public void segmentC()
 	{
@@ -197,12 +220,20 @@ public class display
 		{
 			System.out.print("|");
 		}
+		else
+		{
+			System.out.print(" ");
+		}
 	}
 	public void segmentD()
 	{
 		if(code[3])
 		{
 			System.out.print("-");
+		}
+		else
+		{
+			System.out.print(" ");
 		}
 	}
 	public void segmentE()
@@ -233,13 +264,10 @@ public class display
 		{
 			System.out.print("-");
 		}
+		else
+		{
+			System.out.print(" ");
+		}
 	}
-	public int getLiteral()
-	{
-		return literal;
-	}
-	public int getSize()
-	{
-		return size;
-	}
+
 }
